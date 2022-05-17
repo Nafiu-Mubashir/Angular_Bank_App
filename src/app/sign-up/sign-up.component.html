@@ -1,0 +1,78 @@
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+    <div class="container">
+        <a href="#" class="navbar-brand text-success"><i class="fas fa-piggy-bank"></i> Easy Bank</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span
+                class="navbar-toggler-icon"></span></button>
+
+        <div class="collapse navbar-collapse" id="navmenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a routerLinkActive="active" routerLink="/" class="nav-link"
+                        [routerLinkActiveOptions]={exact:true}>Home</a></li>
+                <li class="nav-item"><a routerLinkActive="active" routerLink="/signup" class="nav-link">Sign Up</a></li>
+                <li class="nav-item"><a routerLinkActive="active" routerLink="/signin" class="nav-link">Sign In</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section>
+    <div class="container mt-3 containers">
+        <div class="card m-auto">
+            <div class="card-body">
+                <div class="text-success">
+                    <h3>Sign up</h3>
+                    <p>Create your account</p>
+                </div>
+                <p class="text-danger text-center">{{errorMessage}}</p>  
+                <div>
+                    <div class="d-flex justify-content-between">
+                        <input type="text" placeholder="First Name" class="form-control no"
+                            [(ngModel)]="user.firstName">
+                        <input type="text" placeholder="Last Name" class="form-control ms-2"
+                            [(ngModel)]="user.lastName">
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <input type="email" placeholder="Email" class="form-control no" [(ngModel)]="user.email">
+                        <input type="text" placeholder="Username" class="form-control ms-2" [(ngModel)]="user.username">
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <input type="number" placeholder="Phone No" class="form-control no" [(ngModel)]="user.phoneNo"
+                            minlength="11">
+                            <input type="text" placeholder="Gender" class="form-control ms-2"
+                            [(ngModel)]="user.gender">
+                        
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <input type="text" placeholder="Home Address" class="form-control"
+                            [(ngModel)]="user.homeAddress">
+                            <input type="date" placeholder="Date of birth" class="form-control ms-2"
+                            [(ngModel)]="user.dateOfBirth">
+                    </div> 
+                    <div class="d-flex justify-content-between mt-2">
+                        <input type="password" placeholder="Password" class="form-control"
+                            [(ngModel)]="user.password">
+                        <input type="password" placeholder=" Cofirm Password" class="form-control ms-2" [(ngModel)]="confirmPass">
+                    </div>
+                    <div class="form-group mt-2">
+                        <label>
+                            <input type="file" name="" [(ngModel)]="user.image" hidden="hidden">
+                            <p class="btn btn-success">Upload Picture</p>
+                        </label>
+                    </div>
+                    <div class=" text-success">
+                        <input type="checkbox" class="form-check-input">
+                        <label class="ms-2">I agree with term & conditions</label>
+                    </div>
+                    <button class="btn btn-success mt-2 form-control" (click)="addUsers()">Sign up</button>
+                    <div class="google mt-2">
+                        <img src="assets/google_logo.png" alt="">
+                        <button class="btn btn-light mt-2 form-control">Sign up with Google</button>
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <p class="">Already have an account? <a routerLink="/signin" class="link-success">Sign in here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,36 @@
+.containers{
+    width: 25%;
+}
+.card{
+    border-radius: 10px;
+    /* box-shadow: .5px .5px 5px 5px #b6afaf; */
+}
+label{
+    font-size: 14px;
+}
+section a,p{
+    text-decoration: none;
+    font-size: 13px;
+}
+input{
+    background: transparent;
+    border-color: #157347;
+}
+::placeholder{
+    color: #157347;
+}
+.form-check-input{
+    cursor: pointer;
+}
+@media (max-width: 700px){
+    .containers{
+        width: 90%;
+        margin-top: 70px !important;
+    }
+    .form-control,select{
+        margin-top: 10px;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        width: 100%;
+    }
+}

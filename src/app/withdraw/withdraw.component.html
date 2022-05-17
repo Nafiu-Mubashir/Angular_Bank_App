@@ -1,0 +1,76 @@
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div class="bg-dark border-right" id="sidebar-wrapper" [ngClass]="status ? 'hide' : 'show'">
+        <div class="list-group list-group-flush">
+            <a routerLink="/dashboard" class="list-group-item list-group-item-action bg-dark text-secondary"><i
+                    class="fa fa-home">
+                    Dashboard</i></a>
+            <a routerLink="/withdraw" class="list-group-item list-group-item-action bg-dark text-secondary"><i
+                    class="fa fa-chart-line"></i> Transactions</a>
+            <a routerLink="/deposit" class="list-group-item list-group-item-action bg-dark text-secondary"><i
+                    class="fas fa-coins"></i> Deposit</a>
+            <a routerLink="/transfer" class="list-group-item list-group-item-action bg-dark text-secondary"><i
+                    class="far fa-paper-plane"></i> Trasfer</a>
+            <div class="dropdown">
+                <a class="list-group-item list-group-item-action bg-dark text-secondary dropdown-toggle" href="#"
+                    role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><i
+                        class="fas fa-file-invoice-dollar"></i> Payments</a>
+                <ul class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item text-secondary" routerLink="/withdraw">Make a paymet</a></li>
+                    <li><a class="dropdown-item text-secondary" routerLink="/withdraw">Request a payment</a></li>
+                </ul>
+            </div>
+            <a routerLink="/withdraw" class="list-group-item list-group-item-action bg-dark text-secondary"><i
+                    class="fas fa-wallet"></i> Withdrawal</a>
+            <a routerLink="/withdraw" class="list-group-item list-group-item-action bg-dark text-secondary"><i class="fas fa-cog"></i>
+                Settings</a>
+            <a routerLink="/signin" class="list-group-item list-group-item-action bg-dark text-secondary"><i
+                    class="fas fa-sign-out-alt"></i> Log out</a>
+        </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <div id="page-content-wrapper">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+            <div class="container-fluid">
+                <button class="btn btn-dark" (click)="clickEvent()" id="easy"><i class="fas fa-piggy-bank"></i> Easy
+                    Bank</button>
+                <a routerLink="/dashboard" class="navbar-brand text-white">Dashboard</a>
+                <div class="d-flex none">
+                    <div class="d-flex ms-auto">
+                        <label for="" class="lang text-secondary ms-auto">Language:</label>
+                        <select name="" id="" class="bg-secondary text-white ms-2">
+                            <option value="" class="text-white">English</option>
+                            <option value="" class="text-white">Chinese</option>
+                            <option value="" class="text-white">Arabic</option>
+                            <option value="" class="text-white">Korean</option>
+                            <option value="" class="text-white">Spanish</option>
+                            <option value="" class="text-white">French</option>
+                            <option value="" class="text-white">Espaion</option>
+                        </select>
+                    </div>
+                    <div class="i bg-secondary ms-3"><i class="fa fa-bell text-white"></i></div>
+                    <img src="assets/team-2.jpg" alt="" class="ms-3">
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="container mt-5 containers">
+                <div class="card m-auto">
+                    <div class="card-body">
+                        <div class="text-success">
+                            <h3><i class="fas fa-piggy-bank"></i> Easy Bank</h3>
+                            <p>Make a easy withdraw form your bank account balance</p>
+                        </div>
+                        <p class="text-danger text-center"></p>
+                        <div>
+                            <input type="text" placeholder="Bank name" class="form-control" [(ngModel)]="bankName">
+                            <input type="number" placeholder="Account Number" class="form-control mt-2" [value]='currentUser.acctNum' disabled>
+                            <input type="number" placeholder="Amount to withdraw" class="form-control mt-2" [(ngModel)]="amount">
+                            <button class="btn btn-success mt-2 form-control" (click)="withdraw()">Withdraw</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

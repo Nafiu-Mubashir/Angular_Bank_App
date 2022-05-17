@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+    <div class="container">
+        <a href="#" class="navbar-brand text-success"><i class="fas fa-piggy-bank"></i> Easy Bank</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navmenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a routerLinkActive="active" routerLink="/" class="nav-link"
+                        [routerLinkActiveOptions]={exact:true}>Home</a></li>
+                <li class="nav-item"><a routerLinkActive="active" routerLink="/signup" class="nav-link">Sign Up</a></li>
+                <li class="nav-item"><a routerLinkActive="active" routerLink="/signin" class="nav-link">Sign In</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section class="container mt-5">
+    <div class="d-flex justify-content-between">
+        <div class="texts text-white">
+            <h4>Save your money the easy way</h4>
+            <p>Get a card with a credit limit of up to $50k <br> without contacting your credit bankers or <br> even
+                going to bank</p>
+            <div>
+                <button class="btn btn-white">
+                    <select name="" id="" class="form-select">
+                        <option value="" selected disabled>Country</option>
+                        <option value="">USA</option>
+                        <option value="">China</option>
+                        <option value="">Saudi Arabia</option>
+                        <option value="">Korea</option>
+                        <option value="">Spain</option>
+                        <option value="">France</option>
+                        <option value="">Nigeria</option>
+                    </select>
+                </button>
+                <button class="btn btn-success ml-3"><a routerLink="/signup" class="text-white">Get Started</a></button>
+            </div>
+            <!-- <div class="images h-50">
+                <img src="assets/card3.png" class="bottom" alt="">
+                <img src="assets/card4.png" class="top" alt="">
+            </div> -->
+        </div>
+        <div class="images">
+            <img src="assets/card1.png" class="bottom" alt="">
+            <img src="assets/card2.png" class="top" alt="">
+        </div>
+    </div>
+    <div class="icon m-auto text-center w-25">
+        <i class="fab fa-facebook text-white ms-2"></i>
+        <i class="fab fa-instagram text-white ms-2"></i>
+        <i class="fab fa-twitter text-white ms-2"></i>
+        <i class="fab fa-youtube text-white ms-2"></i>
+        <i class="fab fa-google text-white ms-2"></i>
+        <i class="fab fa-github text-white ms-2"></i>
+    </div>
+</section>

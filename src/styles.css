@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    /* background-image: url("../src/assets/cards.jpg"); */
+    background-color: black;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@media (max-width: 700px){
+    body{
+        background-color: black;
+        /* background-image: url("../src/assets/photo.jpg"); */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+    }
+}

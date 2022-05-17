@@ -1,0 +1,209 @@
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div class="bg-dark border-right" id="sidebar-wrapper" [ngClass]="status ? 'hide' : 'show'">
+        <div class="list-group list-group-flush">
+            <a routerLink="/dashboard" class="list-group-item list-group-item-action bg-dark text-secondary"><i
+                    class="fa fa-home">
+                    Dashboard</i></a>
+            <a routerLink="/dashboard" class="list-group-item list-group-item-action bg-dark text-secondary"><i
+                    class="fa fa-chart-line"></i> Transactions</a>
+            <a routerLink="/deposit" class="list-group-item list-group-item-action bg-dark text-secondary"><i
+                    class="fas fa-coins"></i> Deposit</a>
+            <a routerLink="/transfer" class="list-group-item list-group-item-action bg-dark text-secondary"><i
+                    class="far fa-paper-plane"></i> Trasfer</a>
+            <div class="dropdown">
+                <a class="list-group-item list-group-item-action bg-dark text-secondary dropdown-toggle" routerLink="/dashboard"
+                    role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><i
+                        class="fas fa-file-invoice-dollar"></i> Wallet</a>
+                <ul class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item text-secondary" routerLink="/wallet">Create a wallet</a></li>
+                    <li><a class="dropdown-item text-secondary" routerLink="/dashboard">Delete Wallet</a></li>
+                </ul>
+            </div>
+            <a routerLink="/withdraw" class="list-group-item list-group-item-action bg-dark text-secondary"><i
+                    class="fas fa-wallet"></i> Withdrawal</a>
+            <a routerLink="/dashboard" class="list-group-item list-group-item-action bg-dark text-secondary"><i class="fas fa-cog"></i>
+                Settings</a>
+            <a (click)="logOut()" class="list-group-item list-group-item-action bg-dark text-secondary"><i
+                    class="fas fa-sign-out-alt"></i> Log out</a>
+        </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <div id="page-content-wrapper">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+            <div class="container-fluid">
+                <button class="btn btn-dark" (click)="clickEvent()" id="easy"><i class="fas fa-piggy-bank"></i> Easy
+                    Bank</button>
+                <a routerLink="/dashboard" class="navbar-brand text-white">Dashboard</a>
+                <div class="d-flex none">
+                    <div class="d-flex ms-auto">
+                        <label for="" class="lang text-secondary ms-auto">Language:</label>
+                        <select name="" id="" class="bg-secondary text-white ms-2">
+                            <option value="" class="text-white">English</option>
+                            <option value="" class="text-white">Chinese</option>
+                            <option value="" class="text-white">Arabic</option>
+                            <option value="" class="text-white">Korean</option>
+                            <option value="" class="text-white">Spanish</option>
+                            <option value="" class="text-white">French</option>
+                            <option value="" class="text-white">Espaion</option>
+                        </select>
+                    </div>
+                    <div class="i bg-secondary ms-3"><i class="fa fa-bell text-white"></i></div>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="d-flex justify-content-between p-2 rows">
+                <div class="card w-50 bg-dark text-white">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h3>Balance</h3>
+                            <p><a href="">Withdraw</a></p>
+                        </div>
+                        <div class="text-center">
+                            <h4>${{currentUser.balance}}<sub>USD</sub></h4>
+                        </div>
+                        <p class="text-center mt-3">Account No: {{currentUser.acctNum}}</p>
+                    </div>
+                </div>
+                <div class="card w-50 bg-dark text-white ms-3">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h3>wallet</h3>
+                            <p>{{currentUser.walletName}}</p>
+                        </div>
+                        <div class="d-flex">
+                            <div class="m-auto">
+                                <div class="text-center">
+                                    <h4>${{currentUser.walletBalance}}<sub>USD</sub></h4>
+                                </div>
+                                <p class="text-center mt-3">Wallete ID: {{currentUser.walletId}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card w-50 bg-dark text-white ms-3">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h3>Deposit</h3>
+                        </div>
+                        <div class="d-flex">
+                            <div class="m-auto">
+                                <div class="text-center">
+                                    <h4>${{currentUser.balance}}<sub>USD</sub></h4>
+                                </div>
+                                <p class="text-center mt-3">{{currentUser.walletId}}</p>
+                            </div>
+                            <div>
+                                <div>
+                                    <!-- <img src="assets/master-removebg-preview.png" class="img" alt=""> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between p-2 rows">
+                <div class="card w-75 bg-dark text-white">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h3>Recent Transaction</h3>
+                            <p><a href="">View All</a></p>
+                        </div>
+                        <div>
+                                  <div class="d-flex justify-content-between">
+                                    <p class="text">Photo</p>
+                                    <p class="text">Name Bussiness</p>
+                                    <p class="text">Date</p>
+                                    <p class="text no">Status</p>
+                                    <p class="text no">Amount</p>
+                                    <p class="text no">Action</p>
+                                  </div>
+                                  <div class="d-flex justify-content-between">
+                                    <img src="assets/team-2.jpg" alt="">
+                                    <p class="text-white mt-3">Wiliams Smith <br> <span class="text-secondary mt-3">ID: 23542268</span></p>
+                                    <p class="text-white mt-3">Mar, 10 2022</p>
+                                    <p class="mt-3 no">Recieved</p>
+                                    <p class="mt-3 text-white no">$250.00</p>
+                                    <button class="btn btn-success mt-3 h-25 no">Details</button>   
+                                  </div>
+                                  <div class="d-flex justify-content-between">
+                                    <img src="assets/team-4.jpg" alt="" class="mt-2">
+                                    <p class="text-white mt-3">Wiliams Smith <br> <span class="text-secondary mt-3">ID: 23542268</span></p>
+                                    <p class="text-white mt-3">Mar, 10 2022</p>
+                                    <p class="mt-3 no text-dang50">Payment</p>
+                                    <p class="mt-3 text-white no">$250.00</p>
+                                    <button class="btn btn-success mt-3 h-25 no">Details</button>   
+                                  </div>
+                                  <div class="d-flex justify-content-between">
+                                    <img src="assets/team-1.jpg" alt="" class="mt-2">
+                                    <p class="text-white mt-3">Wiliams Smith <br> <span class="text-secondary mt-3">ID: 23542268</span></p>
+                                    <p class="text-white mt-3">Mar, 10 2022</p>
+                                    <p class="mt-3 no">Recieved</p>
+                                    <p class="mt-3 text-white no">$250.00</p>
+                                    <button class="btn btn-success mt-3 h-25 no">Details</button>   
+                                  </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card w-25 bg-dark text-white ms-3">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h3>Payment Analytics</h3>
+                            <input type="date" placeholder="March 2022"
+                                class="h-25 b-dark form-control text-white date">
+                        </div>
+                        <div class="mt-2">
+                            <i class="fa fa-chart-pie text-center text-warning ms-5 mt-5"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between p-2 rows">
+                <div class="card w-75 bg-dark text-white">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h3>Upcoming Payments</h3>
+                            <p><a href="">View All</a></p>
+                        </div>
+                        <div>
+                            <div class="d-flex justify-content-between">
+                                <p class="text">Photo</p>
+                                <p class="text">Name Bussiness</p>
+                                <p class="text">Date</p>
+                                <p class="text no">Status</p>
+                                <p class="text no">Amount</p>
+                                <p class="text no">Action</p>
+                              </div>
+                              <div class="d-flex justify-content-between">
+                                <img src="assets/team-2.jpg" alt="">
+                                <p class="text-white mt-2">Wiliams Smith <br> <span class="text-secondary mt-2">ID: 23542268</span></p>
+                                <p class="text-white mt-2">Mar, 10 2022</p>
+                                <p class="mt-2 no text-warning">Pending</p>
+                                <p class="mt-2 text-white no">$250.00</p>
+                                <button class="btn btn-success mt-2 h-25 no">Details</button>   
+                              </div>
+                              <div class="d-flex justify-content-between">
+                                <img src="assets/team-4.jpg" alt="" class="mt-2">
+                                <p class="text-white mt-3">Wiliams Smith <br> <span class="text-secondary mt-3">ID: 23542268</span></p>
+                                <p class="text-white mt-3">Mar, 10 2022</p>
+                                <p class="mt-3 no text-warning">Pending</p>
+                                <p class="mt-3 text-white no">$250.00</p>
+                                <button class="btn btn-success mt-3 h-25 no">Details</button>   
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card w-25 bg-dark text-white ms-3">
+                    <div class="card-body">
+                        <div class="justify-content-between">
+                            <h3>Get someone to pay?</h3>
+                            <p class="text-white">Pay from your Onepay balance. If thay also use Onepay it's FREE</p>
+                            <button class="btn btn-success mt-5">Make Payment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

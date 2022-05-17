@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { userInterface } from './type/userinterface';
 
 @Component({
   selector: 'app-root',

@@ -1,0 +1,99 @@
+section{
+    height: auto;
+}
+h4{
+    font-size: 70px;
+    /* width: 50%; */
+}
+a{
+    text-decoration: none;
+}
+.texts{
+    width: 50%;
+}
+.fa-piggy-bank{
+    font-weight: bolder;
+}
+.fab:hover{
+    color: #198754 !important;
+}
+@keyframes imagesFadeInOut {
+    0% {
+        opacity:1;
+    }
+    25% {
+        opacity:0;
+    }
+    50% {   
+        opacity:1;
+    }
+    100% {  
+        opacity:0;
+    }
+}
+@keyframes imagesFadeOutIn {
+    0% {
+        opacity:0;
+    }
+    25% {
+        opacity:1;
+    }
+    50% {   
+        opacity:0;
+    }
+    100% {  
+        opacity:1;
+    }
+}
+.images img.bottom {
+    animation-name: imagesFadeOutIn;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 8s;
+    animation-direction: alternate;
+    }
+  
+.images img.top {
+  animation-name: imagesFadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 8s;
+  animation-direction: alternate;
+  }
+.images{
+    position:relative;
+    height:281px;
+    width:500px;
+    margin:0 auto;
+  }
+  
+.images img {
+    position:absolute;
+    left:10px;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+  }
+  
+.images img.bottom:hover {
+    opacity:0;
+}
+.icon{
+    margin-top: 150px !important;
+    cursor: pointer;
+}
+@media (max-width: 700px) {
+    .images{
+        display: none;
+    }
+    .icon{
+        width: 100% !important;
+    }
+    h4{
+        font-size: 50px;
+    }
+    .texts{
+        width: 100%;
+    }
+}

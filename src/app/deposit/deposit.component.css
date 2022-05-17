@@ -1,0 +1,202 @@
+body {
+    overflow-x: hidden;
+  }
+  nav{
+    background-color: #1C1C24;
+  }
+  #sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
+  }
+  
+  #sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+  }
+  
+  #sidebar-wrapper .list-group {
+    width: 15rem;
+  }
+  
+  #page-content-wrapper {
+    min-width: 100vw;
+  }
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+  }
+  .navbar-brand{
+      /* margin-left: -300px; */
+  }
+  #easy{
+      font-weight: bolder;
+      border: none;
+      outline: none;
+      color: #157347;
+      background-color: black;
+  }
+  #easy:hover{
+      background-color: white;
+  }
+  .list-group-item:hover{
+    background-color: #157347 !important;
+      color: white !important;
+      border-radius: 10px !important;
+  }
+  select {
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -webkit-padding-end: 20px;
+    -moz-padding-end: 20px;
+    -webkit-padding-start: 2px;
+    -moz-padding-start: 2px;
+    background-color: #F07575; /* Fallback color if gradients are not supported */
+    border: 1px solid #AAA;
+    border-radius: 2px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    color: #555;
+    font-size: inherit;
+    margin: 0;
+    overflow: hidden;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.lang{
+    font-weight: bolder;
+    font-size: 18px;
+    margin-top: 3px;
+}
+select{
+    /* background-color: white; */
+    width: 100%;
+}
+.navbar img{
+    width: 5%;
+    height: 5%;
+    margin-top: 7px;
+}
+.i{
+    width: 7%;
+    border-radius: 5px;
+    text-align: center;
+}
+.fa-bell{
+    position: relative;
+    margin-top: 10px;
+}
+.fa-bell::after{
+    content: "1";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: red;
+    color: white;
+    font-size: 10px;
+    top: -3px;
+    left: 8px;
+    text-align: center;
+}
+.none{
+    margin-left: 200px;
+}
+
+
+.containers{
+    width: 30%;
+}
+.card{
+    border-radius: 10px;
+    /* box-shadow: .5px .5px 5px 5px #b6afaf; */
+}
+label{
+    font-size: 14px;
+}
+section a,p{
+    text-decoration: none;
+    font-size: 13px;
+}
+input,textarea{
+    background: transparent;
+    border-color: #157347;
+}
+::placeholder{
+    color: #157347;
+}
+.form-check-input{
+    cursor: pointer;
+}
+
+  
+  @media (min-width: 768px) {
+    #sidebar-wrapper {
+      margin-left: 0;
+    }
+  
+    #page-content-wrapper {
+      min-width: 0;
+      width: 100%;
+    }
+    .show
+    {
+      margin-left: 0!important;
+    }
+    .hide
+    {
+      margin-left: -15rem!important;
+    }
+    /* .navbar-brand, .lang{
+      display: none !important;
+  } */
+  }
+  
+  @media (max-width: 767px) {
+    .show
+    {
+      margin-left: -15rem!important;
+    }
+    .hide
+    {
+      margin-left: -0!important;
+    }
+    .navbar-brand, .lang{
+        display: none !important;
+    }
+    .none{
+        margin-left: 150px;
+        margin-top: -40px;
+    }
+    select{
+        /* width: 40% !important; */
+    }
+    img{
+        width: 15%;
+        height: 15%;
+        margin-top: 6px;
+    }
+    .i{
+        width: 20%;
+        border-radius: 5px;
+        text-align: center;
+    }
+    .containers{
+        width: 70%;
+        margin-top: 70px !important;
+    }
+    .form-control,select{
+        margin-top: 10px;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        width: 100%;
+    }
+  }
